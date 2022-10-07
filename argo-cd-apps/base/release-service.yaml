@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: integration-service
+  name: release-service
 spec:
   generators:
     - list:
@@ -10,17 +10,17 @@ spec:
           - kcp-name: kcp-unstable
   template:
     metadata:
-      name: '{{kcp-name}}-integration-service'
+      name: '{{kcp-name}}-release-service'
     spec:
       project: default
 
       source:
-        path: components/hacbs/integration-service/overlays/{{kcp-name}}
+        path: components/hacbs/release-service/overlays/{{kcp-name}}
         repoURL: https://github.com/redhat-appstudio/infra-deployments.git
         targetRevision: main
 
       destination:
-        namespace: integration-service
+        namespace: release-service
         name: redhat-hacbs-workspace-{{kcp-name}}
 
       syncPolicy:

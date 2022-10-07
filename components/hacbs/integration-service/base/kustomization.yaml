@@ -12,11 +12,4 @@ images:
 namespace: integration-service
 
 patches:
-  # Add APIExport flag to the operator arguments list
-  - patch: |-
-      - op: replace
-        path: /spec/template/spec/containers/0/args/1
-        value: --api-export-name=integration-service
-    target:
-      kind: Deployment
-      name: controller-manager
+  - ./manager_resources_patch.yaml
