@@ -1,7 +1,7 @@
 resources:
   - allow-argocd-to-manage.yaml
   - argocd-permissions.yaml
-  - https://github.com/dirgim/integration-service/config/default?ref=7c1a3e409117ccd758ed09d1619f3bffa3b9c67f
+  - https://github.com/dirgim/integration-service/config/default?ref=692085a3faaa6a0eb11b5993f847fc9eb5d2eaf6
   - .tekton/
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
