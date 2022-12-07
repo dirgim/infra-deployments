@@ -1,17 +1,13 @@
 resources:
-- allow-argocd-to-manage.yaml
-- argocd-permissions.yaml
-- https://github.com/redhat-appstudio/integration-service/config/default?ref=7b54e0b6ed9a22c85d9fb2f582d346f28f23b304
-
+  - allow-argocd-to-manage.yaml
+  - argocd-permissions.yaml
+  - https://github.com/dirgim/integration-service/config/default?ref=bb7565f126fe3ed74096b1b4319f808251de03c1
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-
 images:
-- name: quay.io/redhat-appstudio/integration-service
-  newName: quay.io/redhat-appstudio/integration-service
-  newTag: 7b54e0b6ed9a22c85d9fb2f582d346f28f23b304
-
+  - name: quay.io/redhat-appstudio/integration-service
+    newName: quay.io/kpavic/test-operator
+    newTag: test-its-webhook-3
 namespace: integration-service
-
 patches:
   - ./manager_resources_patch.yaml
