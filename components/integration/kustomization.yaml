@@ -1,7 +1,7 @@
 resources:
   - allow-argocd-to-manage.yaml
   - argocd-permissions.yaml
-  - https://github.com/dirgim/integration-service/config/default?ref=bb7565f126fe3ed74096b1b4319f808251de03c1
+  - https://github.com/dirgim/integration-service/config/default?ref=ddc54eaf1a021667d240c72f5bb83ddaf4badcd4
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 images:
