@@ -7,7 +7,7 @@ kind: Kustomization
 images:
   - name: quay.io/redhat-appstudio/integration-service
     newName: quay.io/kpavic/test-operator
-    newTag: test-its-webhook-3
+    newTag: test-its-webhook-1
 namespace: integration-service
 patches:
   - ./manager_resources_patch.yaml
